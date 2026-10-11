@@ -4,6 +4,7 @@
 int function1(int x, int n) {
 
 	int y = x % (1 << n );
+	
 
 	int z = y / (1 << n - 1);
 
@@ -42,16 +43,13 @@ int function3(int x) {
 	return 1 << i;
 }
 
-int function4() {
-
-}
-
 
 int main() {
 	int x;
 
-	scanf("%d", &x);
-	printf("%d\n", function3(x));
+	printf("%d\n", function1(251, 3));
+	printf("%d\n", function2(12, 2, 1));
+	printf("%d\n", function3(10));
 
 	return 0;
 

@@ -22,6 +22,11 @@
 
 5. 区间[a,b]中做&实际上只用保留二进制表示中从最高位开始相同的部分，其余位全部变成0。这么做的原因是不同的部分一定会经过0，那么按位与后一定会留下0的结果，而从最高位开始相同的部分中的1可以始终相同不会改变，那么按位与后一定会留下1的结果。
 
+[点击查看代码](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/blob/master/logic.c)  
+
+运行结果截图：
+![1](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/raw/master/images/screenshot_1.png)
+
 6. 思考题：
     - 逻辑运算一般是对真假的运算，考虑的是0或1；而位运算是对二进制的数值进行的运算，考虑的是数值。
     - 性质：第一个是按位与、按位或、按位异或都满足分配律；第二个是同一个数异或两次，相当于没有改变；第三个是按位与和按位取反结合可以实现对特定位的清零。
@@ -36,6 +41,11 @@
 
 3. 最后即是将两个mask的比较，显然可以通过按位与决定。如果有相同字符则按位与后结果不为零，否则必为零，这样我们就可以输出结果了。[^1]
 
+[点击查看代码](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/blob/master/part3.c)
+
+运行结果截图：
+![1](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/raw/master/images/screenshot_2.png)
+
 [^1]:实际上这题我被字符串的识别卡了一会，因为我不太能理解如何将abc这样的字符转变为位数信息，但显然编码值给出了非常好的解决方案。字母表中每个字母已经按顺序排好，只需要用其相对位置就可以将字符转为数字进行位运算。
 
 # 模块四
@@ -49,6 +59,10 @@
 
 4. 最后我们再完善函数需要的参数，可以发现对于研究当前行的函数需要知道行数和三个状态变量，将这三个参数通过值传递就可以完成整个函数的递归。[^3]
 
+[点击查看代码](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/blob/master/Nqueens.c)
+
+运行结果截图：
+![1](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/raw/master/images/screenshot_3.png)
 # 模块五
 
 **广度优先搜索 (BFS) 与位运算寻路**：
@@ -64,6 +78,10 @@
     - 第一，四个条件的判断。痛过条件判断了不成立和结束的情况。
     - 第二，对行列的运用。行列的运用直接表示了节点间的位置关系，将抽象的编号转化为有形的行列，从而可以找到建立节点的连结（同时满足了出界判断）。
     - 第三，队列的运用。每个节点被front处理时会马上带来相邻的几个节点，而这几个节点可以视为同阶的，因为他们的`dist`是相同的，所以谁先被front处理没有区别，只需要找到第一个到终点的就可以了。[^4]
+[点击查看代码](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/blob/master/MOUSE.c)
+
+运行结果截图：
+![1](https://github.com/backway-Lai/GLIMMER-CS-MEDIUM-01/raw/master/images/screenshot_4.png)
 
 
 [^2]:就在做这道题前一天，我在“计算思维导论”这门课的课本上看到了高斯提出八皇后的数学问题。在课本中给出了“回溯法”的解题思想。
